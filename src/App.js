@@ -1,13 +1,12 @@
 import './App.css';
-import Navigation from './Components/Navigation/Navigation'
+import GameList from './Components/GameList/GameList';
+import Navigation from './Components/Navigation/Navigation';
 
 const App = () => {
   return (
     <>
       <Navigation />
-      <div className="App">
-        <h1>hello eric</h1>
-      </div>
+      <GameList title="Explore more games" />
     </>
   );
 }
