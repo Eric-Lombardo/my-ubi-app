@@ -1,0 +1,35 @@
+.article-small-container {
+  display: flex;
+  max-width: 40vw;
+  justify-content: space-between;
+}
+
+.image-right {
+  flex-direction: row;
+}
+
+.image-left {
+  flex-direction: row-reverse;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 10px;
+}
+
+.info p, .info h3 {
+  font-size: 1rem;
+}
+
+.info p {
+  margin: 0;
+}
+
+.article-small-img {
+  display: block;
+  max-width: 20vw;
+  max-height: 15vw;
+  width: auto;
+  height: auto;
+}

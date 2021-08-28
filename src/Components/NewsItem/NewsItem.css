@@ -10,3 +10,13 @@
 .article-date {
   margin: 5px 0;
 }
+
+@media screen and (min-width: 992px) {
+  .article-container {
+    width: 40vw;
+  }
+
+  .article-container h3 {
+    font-size: 1rem;
+  }
+}
