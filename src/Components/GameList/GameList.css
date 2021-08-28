@@ -1,4 +1,54 @@
+.game-container {
+  background-color: #ebe9e4;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .title {
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 90%;
+}
+
+.right {
+  right: 0;
+}
+.right img {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+
+.left {
+  left: 0;
+}
+
+.react-multi-carousel-list {
+  height: 400px;
+  align-items: flex-start !important;
+}
+
+react-multi-carousel-track {
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.view-games-btn {
+  background-color: rgb(231, 79, 104);
+  border-color: rgb(231, 79, 104);
+  text-transform: uppercase;
+}
+
+.pill-btn-anchor {
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
 }

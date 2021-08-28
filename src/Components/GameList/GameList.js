@@ -1,6 +1,7 @@
 import React from 'react';
 import './GameList.css';
 import Carousel from 'react-multi-carousel';
+import Button from 'react-bootstrap/Button';
 import 'react-multi-carousel/lib/styles.css';
 import GameListItem from '../GameListItem/GameListItem';
 import sampleGame1 from '../../Assets/explore-more-games-sample-1.jpg';
@@ -14,6 +15,7 @@ import stadia from '../../Assets/stadia.svg';
 import switchLogo from '../../Assets/switch.svg';
 import windows from '../../Assets/windows.svg';
 import xbox from '../../Assets/xbox.svg';
+import arrow from '../../Assets/arrow.svg';
 
 const GameList = ({ title }) => {
 
@@ -31,11 +33,13 @@ const GameList = ({ title }) => {
   };
 
   return (
-    <>
+    <div className="game-container">
       <h2 className="title">{title}</h2>
       <Carousel
         additionalTransfrom={0}
         arrows
+        customRightArrow={<CustomRight />}
+        customLeftArrow={<CustomLeft />}
         autoPlaySpeed={3000}
         centerMode={false}
         className=""
@@ -66,8 +70,22 @@ const GameList = ({ title }) => {
         <GameListItem image={sampleGame3} title="Riders Republic" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
         <GameListItem image={sampleGame4} title="Scott Pilgrim" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia, switchLogo]} />
       </Carousel>
-    </>
+      <a href="#allGames" className="pill-btn-anchor">
+        <Button className="rounded-pill view-games-btn">View all games</Button>
+      </a>
+    </div>
   );
 }
+
+const CustomRight = ({ onClick }) => (
+  <button className="arrow right" onClick={onClick}>
+    <img alt="right arrow" src={arrow} />
+  </button>
+);
+const CustomLeft = ({ onClick }) => (
+  <button className="arrow left" onClick={onClick}>
+    <img alt="left arrow" src={arrow} />
+  </button>
+);
 
 export default GameList;
