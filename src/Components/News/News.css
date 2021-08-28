@@ -1,0 +1,25 @@
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.category-container {
+  width: 80vw;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.category-btn {
+  margin-right: 15px;
+  color: rgb(231, 79, 104);
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.news-title {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}

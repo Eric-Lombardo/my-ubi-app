@@ -1,0 +1,12 @@
+.article-container {
+  width: 80vw;
+  margin-bottom: 30px;
+}
+
+.article-img {
+  width: 100%;
+}
+
+.article-date {
+  margin: 5px 0;
+}
