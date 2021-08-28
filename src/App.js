@@ -1,10 +1,14 @@
 import './App.css';
+import Navigation from './Components/Navigation/Navigation'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>hello eric</h1>
-    </div>
+    <>
+      <Navigation />
+      <div className="App">
+        <h1>hello eric</h1>
+      </div>
+    </>
   );
 }
 

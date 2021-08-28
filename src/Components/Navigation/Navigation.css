@@ -1,0 +1,15 @@
+.brand-title {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .mobile-margin-auto {
+    margin: auto;
+  }
+  .brand-title {
+    display: none;
+  }
+}
