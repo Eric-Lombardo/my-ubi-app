@@ -12,42 +12,8 @@
   margin: 1.5rem 0;
 }
 
-.arrow {
-  position: absolute;
-  bottom: 5%;
-  border: none;
-  background: #cac9c5;
-  width: 50px;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.right {
-  right: 0;
-  border-top-left-radius: 25%;
-  border-bottom-left-radius: 25%;
-}
-.right img {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-      transform: rotate(180deg);
-}
-
-.left {
-  left: 0;
-  border-top-right-radius: 25%;
-  border-bottom-right-radius: 25%;
-}
-
-.react-multi-carousel-item {
-  display: flex;
-  justify-content: center;
-}
-
 .carousel-container-master {
-  margin-bottom: 100px
+  margin-bottom: 50px
 }
 
 .view-games-btn {
