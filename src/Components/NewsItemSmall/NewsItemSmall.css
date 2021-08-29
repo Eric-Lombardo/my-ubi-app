@@ -1,9 +1,11 @@
 .article-small-container {
   display: flex;
   max-width: 40vw;
-  justify-content: space-between;
   text-decoration: none;
   color: black;
+}
+.article-small-container:nth-of-type(even) {
+  justify-content: space-between;
 }
 
 .image-right {
@@ -30,7 +32,7 @@
 
 .article-small-img {
   display: block;
-  max-width: 20vw;
+  max-width: 50%;
   max-height: 15vw;
   width: auto;
   height: auto;
