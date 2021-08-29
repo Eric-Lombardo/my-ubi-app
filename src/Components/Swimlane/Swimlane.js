@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow from '../../Assets/arrow.svg';
 
-const Swimlane = ({ list, displayDesktopNum, displayMobileNum }) => {
+const Swimlane = ({ list, displayDesktopNum, displayMobileNum, hideArrowsOnDesktop }) => {
 
   const responsive = {
     desktop: {
@@ -18,6 +18,29 @@ const Swimlane = ({ list, displayDesktopNum, displayMobileNum }) => {
       slidesToSlide: displayMobileNum // optional, default to 1.
     }
   };
+
+  const CustomRight = ({ onClick }) => (
+    <button className="arrow right" onClick={onClick}>
+      <img alt="right arrow" src={arrow} />
+    </button>
+  );
+
+  const CustomLeft = ({ onClick }) => (
+    <button className="arrow left" onClick={onClick}>
+      <img alt="left arrow" src={arrow} />
+    </button>
+  );
+
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const { carouselState: { currentSlide } } = rest;
+    return (
+      <div className={hideArrowsOnDesktop ? 'hide-arrows-desktop carousel-button-group' : 'carousel-button-group'}>
+        <CustomLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+        <CustomRight onClick={() => next()} />
+      </div>
+    );
+  };
+
 
   return (
     <div className="carousel-container-master">
@@ -49,25 +72,5 @@ const Swimlane = ({ list, displayDesktopNum, displayMobileNum }) => {
     </div>
   );
 }
-
-const CustomRight = ({ onClick }) => (
-  <button className="arrow right" onClick={onClick}>
-    <img alt="right arrow" src={arrow} />
-  </button>
-);
-const CustomLeft = ({ onClick }) => (
-  <button className="arrow left" onClick={onClick}>
-    <img alt="left arrow" src={arrow} />
-  </button>
-);
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const { carouselState: { currentSlide } } = rest;
-  return (
-    <div className="carousel-button-group">
-      <CustomLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-      <CustomRight onClick={() => next()} />
-    </div>
-  );
-};
 
 export default Swimlane;

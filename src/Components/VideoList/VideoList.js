@@ -20,6 +20,7 @@ const VideoList = ({ title, buttonText }) => {
         <Swimlane
           displayDesktopNum={3}
           displayMobileNum={1}
+          hideArrowsOnDesktop={true}
           list={[
             <VideoListItem
               key="video1"
