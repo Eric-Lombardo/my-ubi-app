@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Ubisoft Interview Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was done in 11 hours and gave me the opportunity to try out
+a package I never used before. I used React as my UI framework and then utilized the react-bootstrap package to create the navbar and the video modals. I also used the react-multi-carousel package to create the carousels/swimlanes for the Games and Video sections; this is a package I never used before so it took me some time to read over the docs to get familiar with it. This homepage is also fully responsive for desktop/tablet/mobile.
 
-## Available Scripts
+Thank you for your consideration and I hope you enjoy it! :)
 
-In the project directory, you can run:
+-----------------------------------------------------------------
+## Project requirements
 
-### `npm start`
+1. Navigation
+    * Black bar containing logo and navigation links
+2. Explore More Games
+    * Slideshow of game cards
+    * Slideshow has 10 items, but only 6 are displayed **
+    * Slideshow moves to the next available set of 6 when the right arrow is clicked
+3. Latest News
+    * List of current news articles
+    * Selecting on different article category filters news articles to only contain specific category news articles
+4. Featured Videos
+    * Clicking on a feature video creates a modal for larger viewing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+** I included more than 10 items to showcase that the swimlane moves 6 items at a time if it can. Also for mobile it moves 3 items at a time.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*Project estimated to take 2 days*
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+----------------------------------------------------------------------
+## Project Setup
+1. Clone the repo
+2. Run `npm install` to get all the packages
+3. Run `npm start` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
