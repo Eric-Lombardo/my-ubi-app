@@ -1,0 +1,26 @@
+.video-container {
+  background-color: #ebe9e4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.view-videos-btn {
+  background-color: rgb(231, 79, 104);
+  border-color: rgb(231, 79, 104);
+  text-transform: uppercase;
+}
+
+.pill-btn-anchor-video {
+  text-decoration: none;
+  position: absolute;
+  bottom: 17%;
+  right: 50%;
+  margin-right: -82px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
