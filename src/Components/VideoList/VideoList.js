@@ -11,6 +11,7 @@ import VideoModal from '../VideoModal/VideoModal';
 const VideoList = ({ title, buttonText }) => {
 
   const [modalShow, setModalShow] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
 
   return (
     <div className="video-container">
@@ -20,9 +21,30 @@ const VideoList = ({ title, buttonText }) => {
           displayDesktopNum={3}
           displayMobileNum={1}
           list={[
-            <VideoListItem image={video1} title="video #1 title" borderColor="rgb(225, 241, 0)" openModal={() => setModalShow(true)} />,
-            <VideoListItem image={video2} title="video #2 title" borderColor="rgb(52, 207, 235)" openModal={() => setModalShow(true)} />,
-            <VideoListItem image={video3} title="video #3 title" borderColor="rgb(240, 174, 75)" openModal={() => setModalShow(true)} />,
+            <VideoListItem
+              image={video1}
+              title="video #1 title"
+              borderColor="rgb(225, 241, 0)"
+              openModal={() => setModalShow(true)}
+              setVideoUrl={setVideoUrl}
+              videoUrl="https://www.youtube.com/embed/-FIF5GmoQDs"
+            />,
+            <VideoListItem
+              image={video2}
+              title="video #2 title"
+              borderColor="rgb(52, 207, 235)"
+              openModal={() => setModalShow(true)}
+              setVideoUrl={setVideoUrl}
+              videoUrl="https://www.youtube.com/embed/nzaHfpL2AdA"
+            />,
+            <VideoListItem
+              image={video3}
+              title="video #3 title"
+              borderColor="rgb(240, 174, 75)"
+              openModal={() => setModalShow(true)}
+              setVideoUrl={setVideoUrl}
+              videoUrl="https://www.youtube.com/embed/whxqyLiIzo8"
+            />
           ]}
         />
       </div>
@@ -33,6 +55,7 @@ const VideoList = ({ title, buttonText }) => {
       <VideoModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        videolink={videoUrl}
       />
     </div>
   );
