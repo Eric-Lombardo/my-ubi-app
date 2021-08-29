@@ -28,48 +28,54 @@ const GameList = ({ title }) => {
     mobile: {
       breakpoint: { max: 992, min: 0 },
       items: 3,
-      slidesToSlide: 6 // optional, default to 1.
+      slidesToSlide: 3 // optional, default to 1.
     }
   };
 
   return (
     <div className="game-container">
       <h2 className="title">{title}</h2>
-      <Carousel
-        additionalTransfrom={0}
-        arrows
-        customRightArrow={<CustomRight />}
-        customLeftArrow={<CustomLeft />}
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite={false}
-        itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        responsive={responsive}
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={2}
-        swipeable
-      >
-        <GameListItem image={sampleGame1} title="Watch Dogs: Legion" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
-        <GameListItem image={sampleGame2} title="Immortals Fenyx Rising" releaseText="Coming Soon" platformIcons={[ps4, switchLogo]} />
-        <GameListItem image={sampleGame3} title="Riders Republic" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
-        <GameListItem image={sampleGame4} title="Scott Pilgrim" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia, switchLogo]} />
-        <GameListItem image={sampleGame5} title="Prince of Persia: Sands of Time" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
-        <GameListItem image={sampleGame6} title="Agos: A Game of Space" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
-        <GameListItem image={sampleGame1} title="Watch Dogs: Legion" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
-        <GameListItem image={sampleGame2} title="Immortals Fenyx Rising" releaseText="Coming Soon" platformIcons={[ps4, switchLogo]} />
-        <GameListItem image={sampleGame3} title="Riders Republic" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
-        <GameListItem image={sampleGame4} title="Scott Pilgrim" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia, switchLogo]} />
-      </Carousel>
+      <div className="carousel-container-master">
+        <Carousel
+          additionalTransfrom={0}
+          arrows={false}
+          autoPlaySpeed={3000}
+          centerMode={false}
+          className=""
+          containerClass="container-padding-bottom"
+          customButtonGroup={<ButtonGroup />}
+          responsive={responsive}
+          dotListClass=""
+          draggable
+          focusOnSelect={false}
+          infinite={false}
+          itemClass="carousel-item-padding-10-px"
+          keyBoardControl
+          minimumTouchDrag={80}
+          renderButtonGroupOutside
+          renderDotsOutside={false}
+          showDots={false}
+          sliderClass=""
+          slidesToSlide={1}
+          swipeable
+        >
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame2} title="Immortals Fenyx Rising" releaseText="Coming Soon" platformIcons={[ps4, switchLogo]} />
+          <GameListItem image={sampleGame3} title="Riders Republic" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
+          <GameListItem image={sampleGame4} title="Scott Pilgrim" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia, switchLogo]} />
+          <GameListItem image={sampleGame5} title="Prince of Persia: Sands of Time" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
+          <GameListItem image={sampleGame6} title="Agos: A Game of Space" releaseText="2021" platformIcons={[xbox, ps4, windows]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 1" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 2" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 3" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 4" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 5" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 6" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 7" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 8" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+          <GameListItem image={sampleGame1} title="Watch Dogs: Legion 9" releaseText="2021" platformIcons={[xbox, ps4, windows, stadia]} />
+        </Carousel>
+      </div>
       <a href="#allGames" className="pill-btn-anchor">
         <Button className="rounded-pill view-games-btn">View all games</Button>
       </a>
@@ -87,5 +93,14 @@ const CustomLeft = ({ onClick }) => (
     <img alt="left arrow" src={arrow} />
   </button>
 );
+const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+  const { carouselState: { currentSlide } } = rest;
+  return (
+    <div className="carousel-button-group">
+      <CustomLeft className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+      <CustomRight onClick={() => next()} />
+    </div>
+  );
+};
 
 export default GameList;

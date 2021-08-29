@@ -1,13 +1,13 @@
 .game-item-container {
   max-width: 17vw;
-  min-width: 132px;
+  min-width: 5vw;
   min-height: auto;
 }
 
 .poster {
   margin-bottom: 0.5rem;
   max-width: 17vw;
-  min-width: 132px;
+  min-width: 5vw;
 }
 
 .game-item-container p {

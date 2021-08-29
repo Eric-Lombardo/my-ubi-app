@@ -1,6 +1,5 @@
 .game-container {
   background-color: #ebe9e4;
-  height: 500px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,16 +9,25 @@
 .title {
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 .arrow {
   position: absolute;
-  top: 90%;
+  bottom: 5%;
+  border: none;
+  background: #cac9c5;
+  width: 50px;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right {
   right: 0;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
 }
 .right img {
   -webkit-transform: rotate(180deg);
@@ -29,16 +37,17 @@
 
 .left {
   left: 0;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
 }
 
-.react-multi-carousel-list {
-  height: 400px;
-  align-items: flex-start !important;
+.react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
 }
 
-react-multi-carousel-track {
-  height: 100%;
-  margin-bottom: 50px;
+.carousel-container-master {
+  margin-bottom: 100px
 }
 
 .view-games-btn {
@@ -48,7 +57,9 @@ react-multi-carousel-track {
 }
 
 .pill-btn-anchor {
+  text-decoration: none;
   position: absolute;
-  bottom: 20px;
-  left: 40%;
+  bottom: 5%;
+  right: 50%;
+  margin-right: -75px;
 }
