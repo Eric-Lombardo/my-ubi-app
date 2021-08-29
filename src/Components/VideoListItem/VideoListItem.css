@@ -5,6 +5,8 @@
   width: 80vw;
   max-width: 700px;
   margin-bottom: 50px;
+  outline: none;
+  border: none;
 }
 
 .thumbnail-container {
