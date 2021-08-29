@@ -2,6 +2,8 @@
   max-width: 17vw;
   min-width: 5vw;
   min-height: auto;
+  text-decoration: none;
+  color: black;
 }
 
 .poster {

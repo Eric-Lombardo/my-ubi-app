@@ -8,14 +8,14 @@ const GameListItem = ({ image, title, releaseText, platformIcons }) => {
   ));
 
   return (
-    <div className="game-item-container">
+    <a className="game-item-container" href={`#${title}`}>
       <img className="poster" alt="Game poster" src={image} />
       <h3 className="item-title">{title}</h3>
       <p>{releaseText}</p>
       <div>
         {displayPlatformIcons}
       </div>
-    </div>
+    </a>
   );
 }
 
