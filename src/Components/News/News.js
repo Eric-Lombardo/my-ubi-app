@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
 import NewsItemSmall from '../NewsItemSmall/NewsItemSmall';
 import './News.css'
@@ -11,9 +11,70 @@ import Button from 'react-bootstrap/Button';
 
 const News = ({ title, categories }) => {
 
+  const [category, setCategory] = useState('all news')
+
+  const mockArticleData = [
+    {
+      image: newsImage1,
+      tag: 'Scott Pilgrim',
+      title: 'Article tagged as Scott Pilgrim',
+      date: 'October 9, 2020',
+      id: 100
+    },
+    {
+      image: newsImage2,
+      tag: 'Riders Republic',
+      title: 'Article tagged as Riders Republic',
+      date: 'October 9, 2020',
+      id: 101
+    },
+    {
+      image: newsImage3,
+      tag: 'Scott Pilgrim',
+      title: 'Article tagged as Scott Pilgrim',
+      date: 'October 8, 2020',
+      id: 102
+    },
+    {
+      image: newsImage4,
+      tag: 'Prince of Persia',
+      title: 'Article tagged as Prince of Persia',
+      date: 'October 8, 2020',
+      id: 103
+    }
+    ,
+    {
+      image: newsImage5,
+      tag: 'Immortals fenyx rising',
+      title: 'Article tagged as Immortals fenyx rising',
+      date: 'October 8, 2020',
+      id: 104
+    }
+  ]
+
   const displayCategories = categories.map(item => (
-    <button key={item} className="category-btn" alt="category">{item}</button>
+    <button
+      key={item}
+      className={`category-btn ${item.toLowerCase() === category.toLowerCase() && 'selected-category'}`}
+      alt="category"
+      onClick={() => setCategory(item)}>
+      {item}
+    </button>
   ));
+
+  const displayMobileArticles = mockArticleData
+    .filter(item => category.toLowerCase() === 'all news' || item.tag.toLowerCase() === category.toLowerCase())
+    .map(item => (
+      <NewsItem key={item.id} image={item.image} title={item.title} date={item.date} />
+    ));
+
+  const displayDesktopArticles = mockArticleData
+    .filter(item => category.toLowerCase() === 'all news' || item.tag.toLowerCase() === category.toLowerCase())
+    .map((item, index) => (index === 0) ?
+      (<NewsItem key={item.id} image={item.image} title={item.title} date={item.date} />)
+      :
+      (<NewsItemSmall key={item.id} image={item.image} title={item.title} date={item.date} isImagePositionRight={index % 2 === 0 ? true : false} />)
+    );
 
   return (
     <div className="news-master-container">
@@ -22,12 +83,7 @@ const News = ({ title, categories }) => {
         <div className="category-container">
           {displayCategories}
         </div>
-        <NewsItem image={newsImage1} title="Animating the future - Dev interview" date="October 9, 2020" />
-        <NewsItem image={newsImage2} title="BIPOC of Ubisoft - Fatim Aissatou Diop" date="October 9, 2020" />
-        <NewsItem image={newsImage3} title="For honor will be playable on Next-Gen Consoles" date="October 8, 2020" />
-        <NewsItem image={newsImage4} title="Rabbids Coding crashes onto mobile" date="October 8, 2020" />
-        <NewsItem image={newsImage5} title="Watch Dogs: Legion - New Story Details and Post-Launch plans revealed" date="October 6, 2020" />
-        <NewsItem image={newsImage1} title="'The walking dead' fan favorites coming to Brawlhalla October 14" date="October 6, 2020" />
+        {displayMobileArticles}
       </div>
 
       <div className="news-container-desktop">
@@ -37,13 +93,10 @@ const News = ({ title, categories }) => {
         </div>
         <div className="article-container-desktop">
           <div className="left-side">
-            <NewsItem image={newsImage1} title="Animating the future - Dev interview" date="October 9, 2020" />
-            <NewsItemSmall image={newsImage2} title="BIPOC of Ubisoft - Fatim Aissatou Diop" date="October 9, 2020" isImagePositionRight={false} />
+            {displayDesktopArticles.slice(0, 2)}
           </div>
           <div className="right-side">
-            <NewsItemSmall image={newsImage3} title="For honor will be playable on Next-Gen Consoles" date="October 8, 2020" isImagePositionRight={true} />
-            <NewsItemSmall image={newsImage4} title="Rabbids Coding crashes onto mobile" date="October 8, 2020" isImagePositionRight={false} />
-            <NewsItemSmall image={newsImage5} title="Watch Dogs: Legion - New Story Details and Post-Launch plans revealed" date="October 6, 2020" isImagePositionRight={true} />
+            {displayDesktopArticles.slice(2)}
           </div>
         </div>
       </div>

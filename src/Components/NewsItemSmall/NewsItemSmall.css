@@ -15,7 +15,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 10px;
+  margin: 0 10px;
 }
 
 .info p, .info h3 {

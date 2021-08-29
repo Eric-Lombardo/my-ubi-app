@@ -39,6 +39,10 @@
   margin: 2rem 0;
 }
 
+.selected-category {
+  font-weight: bold;
+}
+
 
 @media screen and (min-width: 992px) {
   .news-container-mobile {
