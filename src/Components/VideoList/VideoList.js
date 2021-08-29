@@ -22,6 +22,7 @@ const VideoList = ({ title, buttonText }) => {
           displayMobileNum={1}
           list={[
             <VideoListItem
+              key="video1"
               image={video1}
               title="video #1 title"
               borderColor="rgb(225, 241, 0)"
@@ -30,6 +31,7 @@ const VideoList = ({ title, buttonText }) => {
               videoUrl="https://www.youtube.com/embed/-FIF5GmoQDs"
             />,
             <VideoListItem
+              key="video2"
               image={video2}
               title="video #2 title"
               borderColor="rgb(52, 207, 235)"
@@ -38,6 +40,7 @@ const VideoList = ({ title, buttonText }) => {
               videoUrl="https://www.youtube.com/embed/nzaHfpL2AdA"
             />,
             <VideoListItem
+              key="video3"
               image={video3}
               title="video #3 title"
               borderColor="rgb(240, 174, 75)"
