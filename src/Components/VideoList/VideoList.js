@@ -37,7 +37,7 @@ const VideoList = ({ title, buttonText }) => {
               borderColor="rgb(52, 207, 235)"
               openModal={() => setModalShow(true)}
               setVideoUrl={setVideoUrl}
-              videoUrl="https://www.youtube.com/embed/nzaHfpL2AdA"
+              videoUrl="https://www.youtube.com/embed/fB6gTIu_xhU"
             />,
             <VideoListItem
               key="video3"
@@ -46,7 +46,7 @@ const VideoList = ({ title, buttonText }) => {
               borderColor="rgb(240, 174, 75)"
               openModal={() => setModalShow(true)}
               setVideoUrl={setVideoUrl}
-              videoUrl="https://www.youtube.com/embed/whxqyLiIzo8"
+              videoUrl="https://www.youtube.com/embed/U4zb1yiFlQo"
             />
           ]}
         />
