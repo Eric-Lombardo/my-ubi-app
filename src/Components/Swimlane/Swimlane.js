@@ -4,18 +4,18 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow from '../../Assets/arrow.svg';
 
-const Swimlane = ({ list }) => {
+const Swimlane = ({ list, displayDesktopNum, displayMobileNum }) => {
 
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 992 },
-      items: 6,
-      slidesToSlide: 6 // optional, default to 1.
+      items: displayDesktopNum,
+      slidesToSlide: displayDesktopNum // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 992, min: 0 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
+      items: displayMobileNum,
+      slidesToSlide: displayMobileNum // optional, default to 1.
     }
   };
 
